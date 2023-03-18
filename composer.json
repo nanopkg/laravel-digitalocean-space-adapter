@@ -1,0 +1,68 @@
+{
+    "name": "iqbal-hasan/laravel-digitalocean-space-adapter",
+    "description": "This is my package laravel-digitalocean-space-adapter",
+    "keywords": [
+        "IQBAL HASAN",
+        "laravel",
+        "laravel-digitalocean-space-adapter"
+    ],
+    "homepage": "https://github.com/iqbal-hasan/laravel-digitalocean-space-adapter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "IQBAL HASAN",
+            "email": "iqbalhasan.dev@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "spatie/laravel-package-tools": "^1.14.0",
+        "illuminate/contracts": "^10.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nanopkg\\DigitaloceanSpaceAdapter\\": "src",
+            "Nanopkg\\DigitaloceanSpaceAdapter\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nanopkg\\DigitaloceanSpaceAdapter\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nanopkg\\DigitaloceanSpaceAdapter\\DigitaloceanSpaceAdapterServiceProvider"
+            ],
+            "aliases": {
+                "DigitaloceanSpaceAdapter": "Nanopkg\\DigitaloceanSpaceAdapter\\Facades\\DigitaloceanSpaceAdapter"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
